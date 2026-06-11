@@ -2,7 +2,7 @@
 # NAME : Définit le nom complet du workflow. 
 # C'est ce nom qui s'affichera dans l'onglet "Actions" sur l'interface GitHub.
 # ==============================================================================
-name: Bonjour
+name: Worklow d'initiation
 
 # ==============================================================================
 # ON : Spécifie le(s) déclencheur(s) (ou "triggers") du workflow.
@@ -17,7 +17,7 @@ on: [push]
 jobs:
 
   # "dire-bonjour" est l'identifiant unique que l'on donne à notre job
-  dire-bonjour:
+  Saluer-le-monde:
 
     # ==========================================================================
     # RUNS-ON : Définit l'environnement/le système d'exploitation de la machine
