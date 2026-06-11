@@ -1,0 +1,15 @@
+name: Documentation Update
+
+# Déclencheur : s'active sur push uniquement si des modifications touchent le dossier docs/
+on:
+  push:
+    paths:
+      - 'docs/**'
+
+jobs:
+  check-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Confirmer la modification de la doc
+        run: echo "Une modification a été détectée dans le dossier docs/. Workflow exécuté avec succès par ${{ github.actor }}."

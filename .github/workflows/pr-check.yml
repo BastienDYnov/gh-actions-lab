@@ -1,0 +1,17 @@
+name: PR Check
+
+# Déclencheur : s'active uniquement lors de l'ouverture ou de la mise à jour d'une Pull Request ciblant la branche 'main'
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  verifier-pr:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Afficher les informations de la PR
+        run: |
+          echo "Numéro de la PR : #${{ github.event.pull_request.number }}"
+          echo "Auteur de la PR : ${{ github.event.pull_request.user.login }}"
