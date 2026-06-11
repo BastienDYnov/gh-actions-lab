@@ -1,0 +1,36 @@
+# Tâche 1 : Nom du workflow et déclenchement manuel
+name: Shell Lab
+
+on:
+  workflow_dispatch:
+
+jobs:
+  exercices-shell:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Tâche 2 : Script multi-lignes avec le symbole '|'
+      - name: Étape 2 - Script multi-lignes
+        run: |
+          echo "Premier message successif"
+          echo "Deuxième message successif"
+          echo "Troisième message successif"
+
+      # Tâche 3 : Changement de répertoire de travail avec working-directory
+      - name: Étape 3 - Exécution dans le dossier scripts
+        working-directory: ./scripts
+        run: ls -la
+
+      # Tâche 4 : Variables d'environnement au niveau de l'étape
+      - name: Étape 4 - Variables d'environnement
+        env:
+          MON_PREFIXE: "Bravo"
+          MON_PROJET: "GitHub Actions"
+        run: |
+          echo "Message : $MON_PREFIXE, tu progresses sur $MON_PROJET !"
+
+      # Tâche 5 : Simulation d'un échec volontaire
+      - name: Étape 5 - Échec volontaire
+        run: |
+          echo "Attention, cette étape va échouer..."
+          exit 1
