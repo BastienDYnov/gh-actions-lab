@@ -1,4 +1,3 @@
-# Tâche 1 : Nom du workflow et déclenchement manuel
 name: Shell Lab
 
 on:
@@ -9,14 +8,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Tâche 2 : Script multi-lignes avec le symbole '|'
+      # /!\ ÉTAPE INDISPENSABLE AJOUTÉE ICI :
+      - name: Récupérer le code du dépôt
+        uses: actions/checkout@v4
+
+      # Tâche 2
       - name: Étape 2 - Script multi-lignes
         run: |
           echo "Premier message successif"
           echo "Deuxième message successif"
           echo "Troisième message successif"
 
-      # Tâche 3 : Changement de répertoire de travail avec working-directory
+      # Tâche 3 (Elle fonctionnera enfin car le code a été téléchargé)
       - name: Étape 3 - Exécution dans le dossier scripts
         working-directory: ./scripts
         run: ls -la
