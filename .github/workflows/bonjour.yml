@@ -42,3 +42,6 @@ jobs:
 
       - name: Afficher la date et l'heure du jour
         run: date
+
+      - name: affichage de l'auteur du déclanchement
+        run: echo "Le workflow a été déclenché par l'utilisateur ${{ github.actor }}"
