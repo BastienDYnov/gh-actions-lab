@@ -39,3 +39,6 @@ jobs:
         # directement dans le terminal de la machine virtuelle (ici, un shell Bash).
         # ======================================================================
         run: echo "Bonjour depuis GitHub Actions !"
+
+      - name: Afficher la date et l'heure du jour
+        run: date
