@@ -1,11 +1,41 @@
+# ==============================================================================
+# NAME : Définit le nom complet du workflow. 
+# C'est ce nom qui s'affichera dans l'onglet "Actions" sur l'interface GitHub.
+# ==============================================================================
 name: Bonjour
 
+# ==============================================================================
+# ON : Spécifie le(s) déclencheur(s) (ou "triggers") du workflow.
+# Il indique à GitHub *quand* exécuter ce script (ex: un push, une pull request).
+# ==============================================================================
 on: [push]
 
+# ==============================================================================
+# JOBS : Regroupe l'ensemble des tâches indépendantes à exécuter.
+# Un workflow peut contenir plusieurs jobs qui s'exécutent en parallèle par défaut.
+# ==============================================================================
 jobs:
+
+  # "dire-bonjour" est l'identifiant unique que l'on donne à notre job
   dire-bonjour:
+
+    # ==========================================================================
+    # RUNS-ON : Définit l'environnement/le système d'exploitation de la machine
+    # virtuelle (le "runner") fournie par GitHub pour exécuter ce job précis.
+    # ==========================================================================
     runs-on: ubuntu-latest
 
+    # ==========================================================================
+    # STEPS : Liste de manière séquentielle toutes les étapes linéaires 
+    # (les actions ou commandes) qui vont être exécutées à l'intérieur de ce job.
+    # ==========================================================================
     steps:
+
+      # Chaque tiret "-" marque le début d'une nouvelle étape (step)
       - name: Afficher le message de bienvenue
-        run: echo "Bonjour depuis GitHub Actions"
+
+        # ======================================================================
+        # RUN : Indique au runner d'exécuter une ligne de commande textuelle 
+        # directement dans le terminal de la machine virtuelle (ici, un shell Bash).
+        # ======================================================================
+        run: echo "Bonjour depuis GitHub Actions !"
